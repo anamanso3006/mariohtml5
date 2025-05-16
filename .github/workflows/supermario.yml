@@ -19,7 +19,7 @@ jobs:
 
             - name: Build da imagem
               run: |
-                docker build -t anacarvalho3006/supermario:${{ github.run_id }}
+                docker build -t anacarvalho3006/supermario:${{ github.run_id }} .
                 docker tag anacarvalho3006/supermario:latest:${{ github.run_id }} anacarvalho3006/supermario:latest
 
             - name: Push da imagem para o Docker Hub
