@@ -15,7 +15,7 @@ jobs:
 
             - name: Login Docker Hub
               run: |
-                echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login ${{ secrets.DOCKER_HUB_USER }} --password-stdin
+                echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin
 
             - name: Build da imagem
               run: docker build -t anacarvalho3006/supermario:${{ github.run_id }} .
